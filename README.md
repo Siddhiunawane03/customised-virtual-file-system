@@ -95,15 +95,32 @@ Stores:
 ---
 
 ## Architecture Overview
-BootBlock
-   ↓
-SuperBlock
-   ↓
-Incore Inode Linked List (DILB)
-   ↓
-File Table
-   ↓
-UFDT (User File Descriptor Table)
+
++-------------+
+|  BootBlock  |
++-------------+
+        |
+        v
++-------------+
+| SuperBlock  |
++-------------+
+        |
+        v
++---------------------------+
+| Incore Inode Table (DILB) |
+|   (Linked List of Inodes) |
++---------------------------+
+        |
+        v
++-------------+
+| File Table  |
++-------------+
+        |
+        v
++------------------------------+
+| UFDT (User File Descriptor)  |
++------------------------------+
+
 
 
 
